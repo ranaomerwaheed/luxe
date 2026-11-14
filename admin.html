@@ -1,86 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LUXE — Admin Studio</title>
-
-  <!-- Website Favicon -->
-<link rel="icon" type="image/png"
-href="https://i.postimg.cc/JnpM51tP/logo.png">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon"
-href="https://i.postimg.cc/JnpM51tP/logo.png">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUXE — Admin Studio</title>
+<link rel="icon" type="image/png" href="https://i.postimg.cc/JnpM51tP/logo.png">
+<link rel="apple-touch-icon" href="https://i.postimg.cc/JnpM51tP/logo.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-:root{--ink:#111;--muted:#777;--line:#e8e8e8;--paper:#fff;--soft:#f5f5f3;--sans:'DM Sans',sans-serif;--serif:'Playfair Display',serif}*{box-sizing:border-box}body{margin:0;background:#f5f5f3;color:var(--ink);font-family:var(--sans)}button,input,select,textarea{font:inherit}button{cursor:pointer}.login-wrap{min-height:100vh;display:grid;place-items:center;padding:20px;background:#111}.login{background:#fff;padding:42px;width:min(410px,100%)}.brand{font:700 34px var(--serif);letter-spacing:6px;text-align:center}.login h2{text-align:center;font:25px var(--serif);margin:10px 0 28px}.login label,.form-grid label{display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px}.field{width:100%;padding:12px;border:1px solid var(--line);background:#fff;outline:none}.field:focus{border-color:#111}.btn{background:#111;color:#fff;border:1px solid #111;padding:12px 18px;text-transform:uppercase;font-size:10px;letter-spacing:1.4px}.btn:hover{background:white;color:#111}.btn.secondary{background:white;color:#111}.btn.danger{background:#8b2222;border-color:#8b2222}.login .btn{width:100%;margin-top:20px}.hint{font-size:11px;color:#777;text-align:center;line-height:1.6}.app{display:none;min-height:100vh}.sidebar{width:245px;background:#111;color:white;position:fixed;inset:0 auto 0 0;padding:25px 16px;display:flex;flex-direction:column;z-index:5}.sidebrand{font:700 28px var(--serif);letter-spacing:5px;padding:8px 15px 35px}.side-label{font-size:9px;letter-spacing:2px;color:#888;padding:12px 15px}.navbtn{background:none;color:#ccc;border:0;text-align:left;padding:13px 15px;font-size:12px;border-radius:4px}.navbtn:hover,.navbtn.active{background:#2a2a2a;color:white}.sidebar .logout{margin-top:auto}.main{margin-left:245px;padding:28px 32px;max-width:1600px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.topbar h1{font:32px var(--serif);margin:0}.topbar small{color:#777}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:22px}.card,.panel{background:white;border:1px solid var(--line);padding:20px}.card small{font-size:10px;color:#777;letter-spacing:1px;text-transform:uppercase}.metric{font:30px var(--serif);margin-top:10px}.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}.panel h3{font:21px var(--serif);margin:0 0 18px}.section{display:none}.section.active{display:block}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0}.toolbar .field{width:auto;min-width:150px}.toolbar input{flex:1;min-width:190px}.table-wrap{overflow:auto;background:white;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;min-width:700px;font-size:12px}th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:middle}th{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#777;background:#fafafa}tr:last-child td{border-bottom:0}.status{display:inline-block;padding:5px 8px;background:#eee;font-size:10px;border-radius:2px}.status.Delivered{background:#e3f2e8;color:#23643b}.status.Cancelled{background:#f8e5e5;color:#8a2222}.status.Pending{background:#fff2d6;color:#775500}.actions{display:flex;gap:6px;flex-wrap:wrap}.mini{border:1px solid var(--line);background:white;padding:7px 9px;font-size:10px}.mini:hover{background:#111;color:white}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 15px}.form-grid .full{grid-column:1/-1}.form-grid textarea{min-height:90px}.checkrow{display:flex;gap:16px;align-items:center;margin:14px 0;font-size:12px}.checkrow label{display:flex;align-items:center;gap:7px;margin:0;text-transform:none;letter-spacing:0}.modalback{display:none;position:fixed;inset:0;background:#0008;z-index:20;align-items:center;justify-content:center;padding:16px}.modalback.open{display:flex}.modal{background:white;padding:25px;width:min(720px,100%);max-height:92vh;overflow:auto;position:relative}.modal h2{font:28px var(--serif);margin:0 0 15px}.close{position:absolute;right:15px;top:12px;border:0;background:none;font-size:24px}.barrow{display:grid;grid-template-columns:100px 1fr 55px;gap:10px;align-items:center;font-size:11px;margin:14px 0}.bar{height:9px;background:#eee}.bar span{display:block;height:100%;background:#111}.alert{padding:12px;background:#fff4d9;margin:10px 0;font-size:12px}.muted{color:#777}.empty{text-align:center;padding:35px;color:#777}.split{display:flex;justify-content:space-between;gap:12px;align-items:center}.preview{width:54px;height:60px;object-fit:cover;background:#eee}.footnote{font-size:11px;color:#777;line-height:1.6;margin-top:20px}
-@media(max-width:1000px){.sidebar{width:190px}.main{margin-left:190px;padding:22px}.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}@media(max-width:650px){.sidebar{position:static;width:100%;height:auto;padding:12px;display:block}.sidebrand{padding:8px 10px 15px}.side-label{display:none}.navlist{display:flex;overflow:auto;gap:5px}.navbtn{white-space:nowrap;padding:10px}.sidebar .logout{margin:8px}.main{margin:0;padding:17px}.topbar h1{font-size:26px}.cards{grid-template-columns:repeat(2,1fr);gap:8px}.card{padding:14px}.metric{font-size:24px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.toolbar .field{width:100%}}
-</style></head>
+:root{--ink:#111;--muted:#777;--line:#e8e8e8;--paper:#fff;--soft:#f5f5f3;--sans:'DM Sans',sans-serif;--serif:'Playfair Display',serif}
+*{box-sizing:border-box}body{margin:0;background:#f5f5f3;color:var(--ink);font-family:var(--sans)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.login-wrap{min-height:100vh;display:grid;place-items:center;padding:20px;background:#111}
+.login{background:#fff;padding:42px;width:min(410px,100%)}
+.brand{font:700 34px var(--serif);letter-spacing:6px;text-align:center}
+.login h2{text-align:center;font:25px var(--serif);margin:10px 0 28px}
+.login label,.form-grid label{display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px}
+.field{width:100%;padding:12px;border:1px solid var(--line);background:#fff;outline:none}
+.field:focus{border-color:#111}
+.btn{background:#111;color:#fff;border:1px solid #111;padding:12px 18px;text-transform:uppercase;font-size:10px;letter-spacing:1.4px}
+.btn:hover{background:white;color:#111}.btn.secondary{background:white;color:#111}.btn.danger{background:#8b2222;border-color:#8b2222}
+.btn:disabled{opacity:.55;cursor:wait}.login .btn{width:100%;margin-top:20px}
+.hint{font-size:11px;color:#777;text-align:center;line-height:1.6}
+.app{display:none;min-height:100vh}.sidebar{width:245px;background:#111;color:white;position:fixed;inset:0 auto 0 0;padding:25px 16px;display:flex;flex-direction:column;z-index:5}
+.sidebrand{font:700 28px var(--serif);letter-spacing:5px;padding:8px 15px 35px}
+.side-label{font-size:9px;letter-spacing:2px;color:#888;padding:12px 15px}
+.navbtn{background:none;color:#ccc;border:0;text-align:left;padding:13px 15px;font-size:12px;border-radius:4px}
+.navbtn:hover,.navbtn.active{background:#2a2a2a;color:white}.sidebar .logout{margin-top:auto}
+.main{margin-left:245px;padding:28px 32px;max-width:1600px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.topbar h1{font:32px var(--serif);margin:0}.topbar small{color:#777}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:22px}
+.card,.panel{background:white;border:1px solid var(--line);padding:20px}
+.card small{font-size:10px;color:#777;letter-spacing:1px;text-transform:uppercase}
+.metric{font:30px var(--serif);margin-top:10px}
+.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.panel h3{font:21px var(--serif);margin:0 0 18px}
+.section{display:none}.section.active{display:block}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0}
+.toolbar .field{width:auto;min-width:150px}.toolbar input{flex:1;min-width:190px}
+.table-wrap{overflow:auto;background:white;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:700px;font-size:12px}
+th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#777;background:#fafafa}
+tr:last-child td{border-bottom:0}
+.status{display:inline-block;padding:5px 8px;background:#eee;font-size:10px;border-radius:2px}
+.status.Delivered{background:#e3f2e8;color:#23643b}.status.Cancelled{background:#f8e5e5;color:#8a2222}.status.Pending{background:#fff2d6;color:#775500}
+.actions{display:flex;gap:6px;flex-wrap:wrap}.mini{border:1px solid var(--line);background:white;padding:7px 9px;font-size:10px}
+.mini:hover{background:#111;color:white}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 15px}
+.form-grid .full{grid-column:1/-1}.form-grid textarea{min-height:90px}
+.checkrow{display:flex;gap:16px;align-items:center;margin:14px 0;font-size:12px}
+.checkrow label{display:flex;align-items:center;gap:7px;margin:0;text-transform:none;letter-spacing:0}
+.modalback{display:none;position:fixed;inset:0;background:#0008;z-index:20;align-items:center;justify-content:center;padding:16px}
+.modalback.open{display:flex}.modal{background:white;padding:25px;width:min(720px,100%);max-height:92vh;overflow:auto;position:relative}
+.modal h2{font:28px var(--serif);margin:0 0 15px}.close{position:absolute;right:15px;top:12px;border:0;background:none;font-size:24px}
+.barrow{display:grid;grid-template-columns:100px 1fr 55px;gap:10px;align-items:center;font-size:11px;margin:14px 0}
+.bar{height:9px;background:#eee}.bar span{display:block;height:100%;background:#111}
+.alert{padding:12px;background:#fff4d9;margin:10px 0;font-size:12px}
+.muted{color:#777}.empty{text-align:center;padding:35px;color:#777}
+.split{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.preview{width:54px;height:60px;object-fit:cover;background:#eee}
+.footnote{font-size:11px;color:#777;line-height:1.6;margin-top:20px}
+@media(max-width:1000px){.sidebar{width:190px}.main{margin-left:190px;padding:22px}.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
+@media(max-width:650px){.sidebar{position:static;width:100%;height:auto;padding:12px;display:block}.sidebrand{padding:8px 10px 15px}.side-label{display:none}.navlist{display:flex;overflow:auto;gap:5px}.navbtn{white-space:nowrap;padding:10px}.sidebar .logout{margin:8px}.main{margin:0;padding:17px}.topbar h1{font-size:26px}.cards{grid-template-columns:repeat(2,1fr);gap:8px}.card{padding:14px}.metric{font-size:24px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.toolbar .field{width:100%}}
+</style>
+</head>
 <body>
-<div class="login-wrap" id="loginScreen"><form class="login" onsubmit="login(event)"><div class="brand">LUXE</div><h2>Admin Studio</h2><label>Admin username</label><input class="field" id="username" value="admin" required><label>Password</label><input class="field" id="password" type="password" required><button class="btn">Sign in</button><p class="hint">Demo login: <b>admin</b> / <b>Luxe@2026</b><br>Change the demo credentials in the script before real use. This localStorage login is not production security.</p><p id="loginError" class="hint" style="color:#a22"></p></form></div>
-<div class="app" id="app"><aside class="sidebar"><div class="sidebrand">LUXE</div><div class="side-label">STORE MANAGEMENT</div><div class="navlist"><button class="navbtn active" data-page="dashboard">Overview</button><button class="navbtn" data-page="products">Products</button><button class="navbtn" data-page="orders">Orders</button><button class="navbtn" data-page="inventory">Inventory</button><button class="navbtn" data-page="customers">Customers</button><button class="navbtn" data-page="coupons">Coupons</button><button class="navbtn" data-page="settings">Store settings</button><button class="navbtn" data-page="reports">Reports & backup</button><button class="navbtn" data-page="activity">Activity log</button></div><button class="navbtn logout" onclick="logout()">↪ Sign out</button></aside>
-<main class="main"><header class="topbar"><div><h1 id="pageTitle">Overview</h1><small>Welcome back to your store control room.</small></div><small id="today"></small></header>
-<section class="section active" id="dashboard"><div class="cards" id="metrics"></div><div class="grid2"><div class="panel"><h3>Sales overview</h3><div id="salesChart"></div></div><div class="panel"><h3>Stock watch</h3><div id="lowStock"></div><h3 style="margin-top:24px">Latest orders</h3><div id="latestOrders"></div></div></div></section>
-<section class="section" id="products"><div class="split"><h2 style="font:27px var(--serif)">Product catalogue</h2><button class="btn" onclick="openProductForm()">＋ Add product</button></div><div class="toolbar"><input class="field" id="productSearch" placeholder="Search name, SKU..." oninput="renderProductsAdmin()"><select class="field" id="productCategory" onchange="renderProductsAdmin()"><option value="">All categories</option><option>Men</option><option>Women</option><option>Accessories</option></select></div><div class="table-wrap"><table><thead><tr><th>Product</th><th>SKU</th><th>Category</th><th>Price</th><th>Stock</th><th>Visibility</th><th>Actions</th></tr></thead><tbody id="productRows"></tbody></table></div></section>
-<section class="section" id="orders"><h2 style="font:27px var(--serif)">Order management</h2><div class="toolbar"><input class="field" id="orderSearch" placeholder="Search order, customer, phone..." oninput="renderOrders()"><select class="field" id="orderStatus" onchange="renderOrders()"><option value="">All statuses</option><option>Pending</option><option>Confirmed</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option></select><button class="btn secondary" onclick="exportCSV('orders')">Export CSV</button></div><div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Total</th><th>Payment</th><th>Status</th><th>Actions</th></tr></thead><tbody id="orderRows"></tbody></table></div></section>
-<section class="section" id="inventory"><h2 style="font:27px var(--serif)">Inventory control</h2><div class="alert">Low-stock threshold: 5 units. Stock is deducted automatically when an order is placed in the storefront.</div><div class="table-wrap"><table><thead><tr><th>Product</th><th>SKU</th><th>Current stock</th><th>Adjust quantity</th><th>Save</th></tr></thead><tbody id="inventoryRows"></tbody></table></div></section>
-<section class="section" id="customers"><div class="split"><h2 style="font:27px var(--serif)">Customers</h2><button class="btn secondary" onclick="exportCSV('customers')">Export CSV</button></div><div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>City</th><th>Orders</th></tr></thead><tbody id="customerRows"></tbody></table></div></section>
-<section class="section" id="coupons"><div class="split"><h2 style="font:27px var(--serif)">Discount coupons</h2><button class="btn" onclick="openCouponForm()">＋ Create coupon</button></div><div class="table-wrap"><table><thead><tr><th>Code</th><th>Discount</th><th>Minimum order</th><th>Status</th><th>Actions</th></tr></thead><tbody id="couponRows"></tbody></table></div></section>
-<section class="section" id="settings"><h2 style="font:27px var(--serif)">Store settings</h2><div class="panel"><form id="settingsForm" onsubmit="saveSettings(event)" class="form-grid"><div><label>Store name</label><input class="field" name="storeName" required></div><div><label>WhatsApp number (international digits)</label><input class="field" name="whatsapp" placeholder="923001234567"></div><div><label>Delivery charge (Rs.)</label><input class="field" type="number" min="0" name="deliveryCharge"></div><div><label>Free delivery threshold (Rs.)</label><input class="field" type="number" min="0" name="freeDeliveryThreshold"></div><div class="full"><label>Announcement bar text</label><input class="field" name="announcement"></div><div class="full"><button class="btn">Save store settings</button></div></form></div></section>
-<section class="section" id="reports"><h2 style="font:27px var(--serif)">Reports & data backup</h2><div class="cards"><div class="card"><small>All-time sales</small><div class="metric" id="reportRevenue">Rs. 0</div></div><div class="card"><small>Orders</small><div class="metric" id="reportOrders">0</div></div><div class="card"><small>Products</small><div class="metric" id="reportProducts">0</div></div><div class="card"><small>Customers</small><div class="metric" id="reportCustomers">0</div></div></div><div class="panel"><h3>Export & backup</h3><div class="actions"><button class="btn" onclick="exportCSV('orders')">Orders CSV</button><button class="btn secondary" onclick="exportCSV('products')">Products CSV</button><button class="btn secondary" onclick="exportCSV('customers')">Customers CSV</button><button class="btn secondary" onclick="downloadBackup()">Download full backup</button><label class="btn secondary">Restore backup<input type="file" accept="application/json" onchange="restoreBackup(event)" hidden></label></div><p class="footnote">Backup includes products, orders, customers, coupons, settings and activity log. Keep backup files private because they contain customer information. Browser localStorage is not a secure database.</p></div></section>
-<section class="section" id="activity"><h2 style="font:27px var(--serif)">Admin activity</h2><div class="table-wrap"><table><thead><tr><th>Date / time</th><th>Activity</th></tr></thead><tbody id="activityRows"></tbody></table></div></section>
-</main></div>
-<div class="modalback" id="productModal"><div class="modal"><button class="close" onclick="closeModal('productModal')">×</button><h2 id="productFormTitle">Add product</h2><form id="productForm" onsubmit="saveProduct(event)" class="form-grid"><input type="hidden" name="id"><div><label>Product name</label><input class="field" name="name" required></div><div><label>SKU</label><input class="field" name="sku" required></div><div><label>Category</label><select class="field" name="category"><option>Men</option><option>Women</option><option>Accessories</option></select></div><div><label>Regular price (Rs.)</label><input class="field" type="number" min="0" name="price" required></div><div><label>Sale price (0 = none)</label><input class="field" type="number" min="0" name="salePrice"></div><div><label>Stock quantity</label><input class="field" type="number" min="0" name="stock" required></div><div class="full"><label>Image URLs (one per line)</label><textarea class="field" name="images" placeholder="https://..."></textarea><small class="muted">Use publicly accessible image URLs. For local testing, remote image URLs are easiest; localStorage is not suitable for large image uploads.</small></div><div><label>Sizes (comma separated)</label><input class="field" name="sizes" placeholder="S, M, L, XL"></div><div><label>Colours (comma separated)</label><input class="field" name="colors" placeholder="Black, White"></div><div class="full"><label>Description</label><textarea class="field" name="description"></textarea></div><div class="checkrow full"><label><input type="checkbox" name="featured"> Featured product</label><label><input type="checkbox" name="active" checked> Active / visible</label></div><div class="full"><button class="btn">Save product</button></div></form></div></div>
-<div class="modalback" id="couponModal"><div class="modal" style="max-width:460px"><button class="close" onclick="closeModal('couponModal')">×</button><h2>Create coupon</h2><form id="couponForm" onsubmit="saveCoupon(event)" class="form-grid"><div class="full"><label>Coupon code</label><input class="field" name="code" required></div><div><label>Type</label><select class="field" name="type"><option value="percent">Percent</option><option value="fixed">Fixed Rs.</option></select></div><div><label>Value</label><input class="field" type="number" min="1" name="value" required></div><div class="full"><label>Minimum order (Rs.)</label><input class="field" type="number" min="0" name="minOrder" value="0"></div><div class="full"><button class="btn">Save coupon</button></div></form></div></div>
+
+<div class="login-wrap" id="loginScreen">
+  <form class="login" onsubmit="login(event)">
+    <div class="brand">LUXE</div>
+    <h2>Admin Studio</h2>
+    <label for="username">Admin email</label>
+    <input class="field" id="username" type="email" placeholder="Enter admin email" autocomplete="username" required>
+    <label for="password">Password</label>
+    <input class="field" id="password" type="password" autocomplete="current-password" required>
+    <button class="btn" type="submit">Sign in</button>
+    <p class="hint">Secure administrator access.</p>
+    <p id="loginError" class="hint" style="color:#a22" role="alert"></p>
+  </form>
+</div>
+
+<div class="app" id="app">
+  <aside class="sidebar">
+    <div class="sidebrand">LUXE</div><div class="side-label">STORE MANAGEMENT</div>
+    <div class="navlist">
+      <button class="navbtn active" data-page="dashboard">Overview</button>
+      <button class="navbtn" data-page="products">Products</button>
+      <button class="navbtn" data-page="orders">Orders</button>
+      <button class="navbtn" data-page="inventory">Inventory</button>
+      <button class="navbtn" data-page="customers">Customers</button>
+      <button class="navbtn" data-page="coupons">Coupons</button>
+      <button class="navbtn" data-page="settings">Store settings</button>
+      <button class="navbtn" data-page="reports">Reports & backup</button>
+      <button class="navbtn" data-page="activity">Activity log</button>
+    </div>
+    <button class="navbtn logout" onclick="logout()">↪ Sign out</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><h1 id="pageTitle">Overview</h1><small>Welcome back to your store control room.</small></div><small id="today"></small></header>
+    <section class="section active" id="dashboard">
+      <div class="cards" id="metrics"></div>
+      <div class="grid2"><div class="panel"><h3>Sales overview</h3><div id="salesChart"></div></div>
+      <div class="panel"><h3>Stock watch</h3><div id="lowStock"></div><h3 style="margin-top:24px">Latest orders</h3><div id="latestOrders"></div></div></div>
+    </section>
+    <section class="section" id="products">
+      <div class="split"><h2 style="font:27px var(--serif)">Product catalogue</h2><button class="btn" onclick="openProductForm()">＋ Add product</button></div>
+      <div class="toolbar"><input class="field" id="productSearch" placeholder="Search name, SKU..." oninput="renderProductsAdmin()">
+        <select class="field" id="productCategory" onchange="renderProductsAdmin()"><option value="">All categories</option><option>Men</option><option>Women</option><option>Accessories</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>Product</th><th>SKU</th><th>Category</th><th>Price</th><th>Stock</th><th>Visibility</th><th>Actions</th></tr></thead><tbody id="productRows"></tbody></table></div>
+    </section>
+    <section class="section" id="orders">
+      <h2 style="font:27px var(--serif)">Order management</h2>
+      <div class="toolbar"><input class="field" id="orderSearch" placeholder="Search order, customer, phone..." oninput="renderOrders()">
+        <select class="field" id="orderStatus" onchange="renderOrders()"><option value="">All statuses</option><option>Pending</option><option>Confirmed</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option></select>
+        <button class="btn secondary" onclick="exportCSV('orders')">Export CSV</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Total</th><th>Payment</th><th>Status</th><th>Actions</th></tr></thead><tbody id="orderRows"></tbody></table></div>
+    </section>
+    <section class="section" id="inventory">
+      <h2 style="font:27px var(--serif)">Inventory control</h2><div class="alert">Low-stock threshold: 5 units. Stock is deducted automatically when an order is placed in the storefront.</div>
+      <div class="table-wrap"><table><thead><tr><th>Product</th><th>SKU</th><th>Current stock</th><th>Adjust quantity</th><th>Save</th></tr></thead><tbody id="inventoryRows"></tbody></table></div>
+    </section>
+    <section class="section" id="customers">
+      <div class="split"><h2 style="font:27px var(--serif)">Customers</h2><button class="btn secondary" onclick="exportCSV('customers')">Export CSV</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>City</th><th>Orders</th></tr></thead><tbody id="customerRows"></tbody></table></div>
+    </section>
+    <section class="section" id="coupons">
+      <div class="split"><h2 style="font:27px var(--serif)">Discount coupons</h2><button class="btn" onclick="openCouponForm()">＋ Create coupon</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Code</th><th>Discount</th><th>Minimum order</th><th>Status</th><th>Actions</th></tr></thead><tbody id="couponRows"></tbody></table></div>
+    </section>
+    <section class="section" id="settings">
+      <h2 style="font:27px var(--serif)">Store settings</h2><div class="panel">
+      <form id="settingsForm" onsubmit="saveSettings(event)" class="form-grid">
+        <div><label>Store name</label><input class="field" name="storeName" required></div>
+        <div><label>WhatsApp number (international digits)</label><input class="field" name="whatsapp" placeholder="923001234567"></div>
+        <div><label>Delivery charge (Rs.)</label><input class="field" type="number" min="0" name="deliveryCharge"></div>
+        <div><label>Free delivery threshold (Rs.)</label><input class="field" type="number" min="0" name="freeDeliveryThreshold"></div>
+        <div class="full"><label>Announcement bar text</label><input class="field" name="announcement"></div>
+        <div class="full"><button class="btn">Save store settings</button></div>
+      </form></div>
+    </section>
+    <section class="section" id="reports">
+      <h2 style="font:27px var(--serif)">Reports & data backup</h2>
+      <div class="cards"><div class="card"><small>All-time sales</small><div class="metric" id="reportRevenue">Rs. 0</div></div>
+      <div class="card"><small>Orders</small><div class="metric" id="reportOrders">0</div></div><div class="card"><small>Products</small><div class="metric" id="reportProducts">0</div></div>
+      <div class="card"><small>Customers</small><div class="metric" id="reportCustomers">0</div></div></div>
+      <div class="panel"><h3>Export & backup</h3><div class="actions">
+        <button class="btn" onclick="exportCSV('orders')">Orders CSV</button><button class="btn secondary" onclick="exportCSV('products')">Products CSV</button>
+        <button class="btn secondary" onclick="exportCSV('customers')">Customers CSV</button><button class="btn secondary" onclick="downloadBackup()">Download full backup</button>
+        <label class="btn secondary">Restore backup<input type="file" accept="application/json" onchange="restoreBackup(event)" hidden></label>
+      </div><p class="footnote">Backup includes products, orders, customers, coupons, settings and activity log. Keep backup files private because they contain customer information. Browser localStorage is not a secure database.</p></div>
+    </section>
+    <section class="section" id="activity"><h2 style="font:27px var(--serif)">Admin activity</h2>
+      <div class="table-wrap"><table><thead><tr><th>Date / time</th><th>Activity</th></tr></thead><tbody id="activityRows"></tbody></table></div>
+    </section>
+  </main>
+</div>
+
+<div class="modalback" id="productModal"><div class="modal"><button class="close" onclick="closeModal('productModal')">×</button><h2 id="productFormTitle">Add product</h2>
+<form id="productForm" onsubmit="saveProduct(event)" class="form-grid"><input type="hidden" name="id">
+<div><label>Product name</label><input class="field" name="name" required></div><div><label>SKU</label><input class="field" name="sku" required></div>
+<div><label>Category</label><select class="field" name="category"><option>Men</option><option>Women</option><option>Accessories</option></select></div>
+<div><label>Regular price (Rs.)</label><input class="field" type="number" min="0" name="price" required></div>
+<div><label>Sale price (0 = none)</label><input class="field" type="number" min="0" name="salePrice"></div>
+<div><label>Stock quantity</label><input class="field" type="number" min="0" name="stock" required></div>
+<div class="full"><label>Image URLs (one per line)</label><textarea class="field" name="images" placeholder="https://..."></textarea><small class="muted">Use publicly accessible image URLs. LocalStorage is not suitable for large image uploads.</small></div>
+<div><label>Sizes (comma separated)</label><input class="field" name="sizes" placeholder="S, M, L, XL"></div><div><label>Colours (comma separated)</label><input class="field" name="colors" placeholder="Black, White"></div>
+<div class="full"><label>Description</label><textarea class="field" name="description"></textarea></div>
+<div class="checkrow full"><label><input type="checkbox" name="featured"> Featured product</label><label><input type="checkbox" name="active" checked> Active / visible</label></div>
+<div class="full"><button class="btn">Save product</button></div></form></div></div>
+
+<div class="modalback" id="couponModal"><div class="modal" style="max-width:460px"><button class="close" onclick="closeModal('couponModal')">×</button><h2>Create coupon</h2>
+<form id="couponForm" onsubmit="saveCoupon(event)" class="form-grid"><div class="full"><label>Coupon code</label><input class="field" name="code" required></div>
+<div><label>Type</label><select class="field" name="type"><option value="percent">Percent</option><option value="fixed">Fixed Rs.</option></select></div>
+<div><label>Value</label><input class="field" type="number" min="1" name="value" required></div>
+<div class="full"><label>Minimum order (Rs.)</label><input class="field" type="number" min="0" name="minOrder" value="0"></div>
+<div class="full"><button class="btn">Save coupon</button></div></form></div></div>
 <div class="modalback" id="orderModal"><div class="modal"><button class="close" onclick="closeModal('orderModal')">×</button><div id="orderDetail"></div></div></div>
+
+<!-- Load Supabase exactly once, then initialize it exactly once. -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./supabase-config.js"></script>
-  <script>
+
+<script>
+"use strict";
+
 const KEYS={products:'luxe_products_v1',orders:'luxe_orders_v1',customers:'luxe_customers_v1',coupons:'luxe_coupons_v1',settings:'luxe_settings_v1',wishlist:'luxe_wishlist_v1',cart:'luxe_cart_v1',recent:'luxe_recent_v1',subscribers:'luxe_subscribers_v1',activity:'luxe_activity_v1'};
-const ADMIN_USER='admin',ADMIN_PASS='Luxe@2026';
-function read(k,d=[]){try{let v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}}function write(k,v){localStorage.setItem(k,JSON.stringify(v))}
-function money(n){return'Rs. '+Number(n||0).toLocaleString('en-PK')}function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function log(s){let a=read(KEYS.activity,[]);a.unshift({at:new Date().toISOString(),text:s});write(KEYS.activity,a.slice(0,300))}
-function login(e){e.preventDefault();if(document.getElementById('username').value===ADMIN_USER&&document.getElementById('password').value===ADMIN_PASS){sessionStorage.setItem('luxe_admin_session','1');startApp()}else document.getElementById('loginError').textContent='Incorrect username or password.'}
-function logout(){sessionStorage.removeItem('luxe_admin_session');location.reload()}
-function startApp(){document.getElementById('loginScreen').style.display='none';document.getElementById('app').style.display='block';document.getElementById('today').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelectorAll('.navbtn[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page,b)));refreshAll()}
-function go(page,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(page).classList.add('active');document.querySelectorAll('.navbtn[data-page]').forEach(b=>b.classList.remove('active'));(btn||document.querySelector(`[data-page="${page}"]`)).classList.add('active');document.getElementById('pageTitle').textContent=page==='dashboard'?'Overview':page.charAt(0).toUpperCase()+page.slice(1)}
+
+function read(k,d=[]){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}}
+function write(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function money(n){return 'Rs. '+Number(n||0).toLocaleString('en-PK')}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function log(s){const a=read(KEYS.activity,[]);a.unshift({at:new Date().toISOString(),text:s});write(KEYS.activity,a.slice(0,300))}
+
+async function login(e){
+  e.preventDefault();
+  const email=document.getElementById('username').value.trim();
+  const password=document.getElementById('password').value;
+  const errorBox=document.getElementById('loginError');
+  const button=e.currentTarget.querySelector('button[type="submit"]');
+  errorBox.textContent='';
+  button.disabled=true;button.textContent='Signing in...';
+  try{
+    if(!window.LUXE_SUPABASE)throw new Error('Supabase connection is not available. Check supabase-config.js.');
+    const {data,error}=await window.LUXE_SUPABASE.auth.signInWithPassword({email,password});
+    if(error)throw error;
+    if(!data.session)throw new Error('Login session could not be created.');
+    document.getElementById('password').value='';
+    startApp();
+  }catch(error){
+    console.error('LUXE login error:',error);
+    errorBox.textContent=error.message||'Login failed. Please try again.';
+  }finally{
+    button.disabled=false;button.textContent='Sign in';
+  }
+}
+
+async function logout(){
+  if(!window.LUXE_SUPABASE){alert('Supabase connection is unavailable.');return}
+  const {error}=await window.LUXE_SUPABASE.auth.signOut();
+  if(error){alert('Logout failed: '+error.message);return}
+  location.reload();
+}
+
+function startApp(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('today').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.querySelectorAll('.navbtn[data-page]').forEach(b=>{
+    if(!b.dataset.bound){b.addEventListener('click',()=>go(b.dataset.page,b));b.dataset.bound='1'}
+  });
+  refreshAll();
+}
+function go(page,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  const section=document.getElementById(page);if(section)section.classList.add('active');
+  document.querySelectorAll('.navbtn[data-page]').forEach(b=>b.classList.remove('active'));
+  const target=btn||document.querySelector(`[data-page="${page}"]`);if(target)target.classList.add('active');
+  document.getElementById('pageTitle').textContent=page==='dashboard'?'Overview':page.charAt(0).toUpperCase()+page.slice(1);
+}
 function refreshAll(){renderDashboard();renderProductsAdmin();renderOrders();renderInventory();renderCustomers();renderCoupons();loadSettings();renderReports();renderActivity()}
-function renderDashboard(){let o=read(KEYS.orders),p=read(KEYS.products),c=read(KEYS.customers),revenue=o.filter(x=>x.status!=='Cancelled').reduce((a,x)=>a+Number(x.total),0),pending=o.filter(x=>['Pending','Confirmed','Processing','Shipped'].includes(x.status)).length,delivered=o.filter(x=>x.status==='Delivered').length;let metrics=[['Total revenue',money(revenue)],['Total orders',o.length],['Total products',p.length],['Customers',c.length],['Pending orders',pending],['Delivered orders',delivered],['Low stock',p.filter(x=>x.stock<=5).length],['Today’s sales',money(o.filter(x=>new Date(x.createdAt).toDateString()===new Date().toDateString()&&x.status!=='Cancelled').reduce((a,x)=>a+x.total,0))]];document.getElementById('metrics').innerHTML=metrics.map(x=>`<div class="card"><small>${x[0]}</small><div class="metric">${x[1]}</div></div>`).join('');let days=Array.from({length:7},(_,i)=>{let d=new Date();d.setDate(d.getDate()-(6-i));return{label:d.toLocaleDateString(undefined,{weekday:'short'}),value:o.filter(x=>new Date(x.createdAt).toDateString()===d.toDateString()&&x.status!=='Cancelled').reduce((a,x)=>a+x.total,0)}}),max=Math.max(1,...days.map(x=>x.value));document.getElementById('salesChart').innerHTML=days.map(x=>`<div class="barrow"><span>${x.label}</span><div class="bar"><span style="width:${x.value/max*100}%"></span></div><b>${Math.round(x.value).toLocaleString()}</b></div>`).join('');let low=p.filter(x=>x.stock<=5);document.getElementById('lowStock').innerHTML=low.length?low.map(x=>`<div class="split" style="padding:8px 0;border-bottom:1px solid #eee;font-size:12px"><span>${esc(x.name)}</span><b>${x.stock} left</b></div>`).join(''):'<p class="muted">No low-stock products.</p>';document.getElementById('latestOrders').innerHTML=o.slice(0,4).map(x=>`<div class="split" style="font-size:11px;padding:7px 0"><span>${esc(x.id)} · ${esc(x.customer.name)}</span><b>${money(x.total)}</b></div>`).join('')||'<p class="muted">No orders yet.</p>'}
-function renderProductsAdmin(){let q=(document.getElementById('productSearch')?.value||'').toLowerCase(),cat=document.getElementById('productCategory')?.value||'',p=read(KEYS.products).filter(x=>(!q||(x.name+' '+x.sku).toLowerCase().includes(q))&&(!cat||x.category===cat));document.getElementById('productRows').innerHTML=p.map(x=>`<tr><td><div style="display:flex;align-items:center;gap:10px"><img class="preview" src="${esc(x.images?.[0]||'')}" onerror="this.style.display='none'"><b>${esc(x.name)}</b></div></td><td>${esc(x.sku)}</td><td>${esc(x.category)}</td><td>${money(x.salePrice||x.price)}</td><td>${x.stock}</td><td><span class="status">${x.active===false?'Hidden':'Active'}</span></td><td><div class="actions"><button class="mini" onclick="editProduct('${x.id}')">Edit</button><button class="mini" onclick="toggleProduct('${x.id}')">${x.active===false?'Activate':'Hide'}</button><button class="mini" onclick="deleteProduct('${x.id}')">Delete</button></div></td></tr>`).join('')||'<tr><td colspan="7" class="empty">No products found.</td></tr>'}
-function openProductForm(p){let f=document.getElementById('productForm');f.reset();f.elements.id.value=p?.id||'';document.getElementById('productFormTitle').textContent=p?'Edit product':'Add product';if(p){for(let k of ['name','sku','category','price','salePrice','stock','description'])f.elements[k].value=p[k]??'';f.elements.images.value=(p.images||[]).join('\n');f.elements.sizes.value=(p.sizes||[]).join(', ');f.elements.colors.value=(p.colors||[]).join(', ');f.elements.featured.checked=!!p.featured;f.elements.active.checked=p.active!==false}document.getElementById('productModal').classList.add('open')}
-function editProduct(id){let p=read(KEYS.products).find(x=>x.id===id);if(p)openProductForm(p)}
-function saveProduct(e){e.preventDefault();let f=new FormData(e.target),id=f.get('id')||'P'+Date.now(),old=read(KEYS.products).find(x=>x.id===id),p={id,name:f.get('name').trim(),sku:f.get('sku').trim(),category:f.get('category'),price:Number(f.get('price')),salePrice:Number(f.get('salePrice'))||0,stock:Number(f.get('stock')),images:f.get('images').split('\n').map(x=>x.trim()).filter(Boolean),sizes:f.get('sizes').split(',').map(x=>x.trim()).filter(Boolean),colors:f.get('colors').split(',').map(x=>x.trim()).filter(Boolean),description:f.get('description').trim(),featured:e.target.elements.featured.checked,active:e.target.elements.active.checked,createdAt:old?.createdAt||Date.now()};if(p.salePrice>=p.price&&p.salePrice>0){alert('Sale price must be lower than regular price.');return}if(!p.images.length){alert('Add at least one product image URL.');return}let a=read(KEYS.products);if(a.some(x=>x.sku.toLowerCase()===p.sku.toLowerCase()&&x.id!==id)){alert('SKU already exists.');return}let i=a.findIndex(x=>x.id===id);if(i>=0)a[i]=p;else a.unshift(p);write(KEYS.products,a);log((old?'Updated':'Created')+' product '+p.name);closeModal('productModal');refreshAll()}
-function toggleProduct(id){let a=read(KEYS.products),p=a.find(x=>x.id===id);p.active=p.active===false;write(KEYS.products,a);log((p.active?'Activated ':'Deactivated ')+p.name);refreshAll()}
-function deleteProduct(id){let p=read(KEYS.products).find(x=>x.id===id);if(!p||!confirm('Delete '+p.name+'?'))return;write(KEYS.products,read(KEYS.products).filter(x=>x.id!==id));log('Deleted product '+p.name);refreshAll()}
-function renderOrders(){let q=(document.getElementById('orderSearch')?.value||'').toLowerCase(),st=document.getElementById('orderStatus')?.value||'',a=read(KEYS.orders).filter(o=>(!st||o.status===st)&&(!q||(o.id+' '+o.customer.name+' '+o.customer.phone).toLowerCase().includes(q)));document.getElementById('orderRows').innerHTML=a.map(o=>`<tr><td><b>${esc(o.id)}</b></td><td>${esc(o.customer.name)}<br><span class="muted">${esc(o.customer.phone)}</span></td><td>${new Date(o.createdAt).toLocaleDateString()}</td><td>${money(o.total)}</td><td>${esc(o.payment)}</td><td><span class="status ${o.status}">${esc(o.status)}</span></td><td><div class="actions"><button class="mini" onclick="viewOrder('${o.id}')">Details</button><button class="mini" onclick="printInvoice('${o.id}')">Invoice</button></div></td></tr>`).join('')||'<tr><td colspan="7" class="empty">No orders found.</td></tr>'}
-function viewOrder(id){let o=read(KEYS.orders).find(x=>x.id===id);if(!o)return;document.getElementById('orderDetail').innerHTML=`<h2>Order ${esc(o.id)}</h2><p class="muted">${new Date(o.createdAt).toLocaleString()}</p><div class="panel"><b>${esc(o.customer.name)}</b><p>${esc(o.customer.phone)} · ${esc(o.customer.email)}<br>${esc(o.customer.address)}, ${esc(o.customer.city)}</p></div><h3>Items</h3>${o.items.map(x=>`<div class="split" style="padding:9px 0;border-bottom:1px solid #eee;font-size:12px"><span>${esc(x.name)} · ${esc(x.size)} / ${esc(x.color)} × ${x.qty}</span><b>${money(x.price*x.qty)}</b></div>`).join('')}<p>Subtotal: ${money(o.subtotal)}<br>Delivery: ${money(o.delivery)}<br>Discount: ${money(o.discount)}<br><b>Total: ${money(o.total)}</b></p><label>Update order status</label><select class="field" id="newStatus">${['Pending','Confirmed','Processing','Shipped','Delivered','Cancelled'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select><button class="btn" style="margin-top:12px" onclick="updateOrderStatus('${o.id}')">Save status</button>`;document.getElementById('orderModal').classList.add('open')}
-function updateOrderStatus(id){let a=read(KEYS.orders),o=a.find(x=>x.id===id);o.status=document.getElementById('newStatus').value;o.updatedAt=new Date().toISOString();write(KEYS.orders,a);log('Changed '+id+' status to '+o.status);closeModal('orderModal');refreshAll()}
-function printInvoice(id){let o=read(KEYS.orders).find(x=>x.id===id);if(!o)return;let w=window.open('','_blank');w.document.write(`<html><head><title>Invoice ${esc(o.id)}</title><style>body{font:14px Arial;padding:35px;color:#111}h1{letter-spacing:5px}table{width:100%;border-collapse:collapse;margin-top:25px}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left}</style></head><body><h1>LUXE</h1><h2>INVOICE</h2><p>Order: ${esc(o.id)}<br>Date: ${new Date(o.createdAt).toLocaleString()}<br>Status: ${esc(o.status)}</p><p><b>Bill to:</b> ${esc(o.customer.name)}<br>${esc(o.customer.phone)}<br>${esc(o.customer.address)}, ${esc(o.customer.city)}</p><table><tr><th>Item</th><th>Qty</th><th>Price</th></tr>${o.items.map(x=>`<tr><td>${esc(x.name)} (${esc(x.size)}, ${esc(x.color)})</td><td>${x.qty}</td><td>${money(x.price*x.qty)}</td></tr>`).join('')}</table><p>Subtotal: ${money(o.subtotal)}<br>Delivery: ${money(o.delivery)}<br>Discount: ${money(o.discount)}<br><b>Total: ${money(o.total)}</b></p><script>window.print()<\/script></body></html>`);w.document.close()}
-function renderInventory(){let p=read(KEYS.products);document.getElementById('inventoryRows').innerHTML=p.map(x=>`<tr><td>${esc(x.name)}</td><td>${esc(x.sku)}</td><td><b>${x.stock}</b></td><td><input class="field" style="max-width:110px" type="number" min="0" id="stock-${x.id}" value="${x.stock}"></td><td><button class="mini" onclick="saveStock('${x.id}')">Update</button></td></tr>`).join('')||'<tr><td colspan="5" class="empty">No products.</td></tr>'}
-function saveStock(id){let qty=Number(document.getElementById('stock-'+id).value);if(!Number.isInteger(qty)||qty<0){alert('Enter a valid stock quantity.');return}let a=read(KEYS.products),p=a.find(x=>x.id===id);p.stock=qty;write(KEYS.products,a);log('Updated stock for '+p.name+' to '+qty);refreshAll()}
-function renderCustomers(){let a=read(KEYS.customers);document.getElementById('customerRows').innerHTML=a.map(x=>`<tr><td>${esc(x.name)}</td><td>${esc(x.email)}</td><td>${esc(x.phone)}</td><td>${esc(x.city)}</td><td>${x.orders||0}</td></tr>`).join('')||'<tr><td colspan="5" class="empty">No customers yet.</td></tr>'}
-function renderCoupons(){document.getElementById('couponRows').innerHTML=read(KEYS.coupons).map(c=>`<tr><td><b>${esc(c.code)}</b></td><td>${c.type==='percent'?c.value+'%':money(c.value)}</td><td>${money(c.minOrder)}</td><td>${c.active===false?'Inactive':'Active'}</td><td><div class="actions"><button class="mini" onclick="toggleCoupon('${c.code}')">Toggle</button><button class="mini" onclick="deleteCoupon('${c.code}')">Delete</button></div></td></tr>`).join('')||'<tr><td colspan="5" class="empty">No coupons.</td></tr>'}
+
+function renderDashboard(){
+  const o=read(KEYS.orders),p=read(KEYS.products),c=read(KEYS.customers);
+  const revenue=o.filter(x=>x.status!=='Cancelled').reduce((a,x)=>a+Number(x.total||0),0);
+  const pending=o.filter(x=>['Pending','Confirmed','Processing','Shipped'].includes(x.status)).length;
+  const delivered=o.filter(x=>x.status==='Delivered').length;
+  const metrics=[['Total revenue',money(revenue)],['Total orders',o.length],['Total products',p.length],['Customers',c.length],['Pending orders',pending],['Delivered orders',delivered],['Low stock',p.filter(x=>Number(x.stock)<=5).length],['Today’s sales',money(o.filter(x=>new Date(x.createdAt).toDateString()===new Date().toDateString()&&x.status!=='Cancelled').reduce((a,x)=>a+Number(x.total||0),0))]];
+  document.getElementById('metrics').innerHTML=metrics.map(x=>`<div class="card"><small>${x[0]}</small><div class="metric">${x[1]}</div></div>`).join('');
+  const days=Array.from({length:7},(_,i)=>{const d=new Date();d.setDate(d.getDate()-(6-i));return{label:d.toLocaleDateString(undefined,{weekday:'short'}),value:o.filter(x=>new Date(x.createdAt).toDateString()===d.toDateString()&&x.status!=='Cancelled').reduce((a,x)=>a+Number(x.total||0),0)}});
+  const max=Math.max(1,...days.map(x=>x.value));
+  document.getElementById('salesChart').innerHTML=days.map(x=>`<div class="barrow"><span>${x.label}</span><div class="bar"><span style="width:${x.value/max*100}%"></span></div><b>${Math.round(x.value).toLocaleString()}</b></div>`).join('');
+  const low=p.filter(x=>Number(x.stock)<=5);
+  document.getElementById('lowStock').innerHTML=low.length?low.map(x=>`<div class="split" style="padding:8px 0;border-bottom:1px solid #eee;font-size:12px"><span>${esc(x.name)}</span><b>${x.stock} left</b></div>`).join(''):'<p class="muted">No low-stock products.</p>';
+  document.getElementById('latestOrders').innerHTML=o.slice(0,4).map(x=>`<div class="split" style="font-size:11px;padding:7px 0"><span>${esc(x.id)} · ${esc(x.customer?.name||'Customer')}</span><b>${money(x.total)}</b></div>`).join('')||'<p class="muted">No orders yet.</p>';
+}
+function renderProductsAdmin(){
+  const q=(document.getElementById('productSearch')?.value||'').toLowerCase(),cat=document.getElementById('productCategory')?.value||'';
+  const p=read(KEYS.products).filter(x=>(!q||(String(x.name||'')+' '+String(x.sku||'')).toLowerCase().includes(q))&&(!cat||x.category===cat));
+  document.getElementById('productRows').innerHTML=p.map(x=>`<tr><td><div style="display:flex;align-items:center;gap:10px"><img class="preview" src="${esc(x.images?.[0]||'')}" onerror="this.style.display='none'"><b>${esc(x.name)}</b></div></td><td>${esc(x.sku)}</td><td>${esc(x.category)}</td><td>${money(x.salePrice||x.price)}</td><td>${x.stock}</td><td><span class="status">${x.active===false?'Hidden':'Active'}</span></td><td><div class="actions"><button class="mini" onclick="editProduct('${esc(x.id)}')">Edit</button><button class="mini" onclick="toggleProduct('${esc(x.id)}')">${x.active===false?'Activate':'Hide'}</button><button class="mini" onclick="deleteProduct('${esc(x.id)}')">Delete</button></div></td></tr>`).join('')||'<tr><td colspan="7" class="empty">No products found.</td></tr>';
+}
+function openProductForm(p){
+  const f=document.getElementById('productForm');f.reset();f.elements.id.value=p?.id||'';
+  document.getElementById('productFormTitle').textContent=p?'Edit product':'Add product';
+  if(p){for(const k of ['name','sku','category','price','salePrice','stock','description'])f.elements[k].value=p[k]??'';f.elements.images.value=(p.images||[]).join('\n');f.elements.sizes.value=(p.sizes||[]).join(', ');f.elements.colors.value=(p.colors||[]).join(', ');f.elements.featured.checked=!!p.featured;f.elements.active.checked=p.active!==false}
+  document.getElementById('productModal').classList.add('open');
+}
+function editProduct(id){const p=read(KEYS.products).find(x=>x.id===id);if(p)openProductForm(p)}
+function saveProduct(e){
+  e.preventDefault();const f=new FormData(e.target),id=f.get('id')||'P'+Date.now(),a=read(KEYS.products),old=a.find(x=>x.id===id);
+  const p={id,name:f.get('name').trim(),sku:f.get('sku').trim(),category:f.get('category'),price:Number(f.get('price')),salePrice:Number(f.get('salePrice'))||0,stock:Number(f.get('stock')),images:f.get('images').split('\n').map(x=>x.trim()).filter(Boolean),sizes:f.get('sizes').split(',').map(x=>x.trim()).filter(Boolean),colors:f.get('colors').split(',').map(x=>x.trim()).filter(Boolean),description:f.get('description').trim(),featured:e.target.elements.featured.checked,active:e.target.elements.active.checked,createdAt:old?.createdAt||Date.now()};
+  if(p.salePrice>=p.price&&p.salePrice>0){alert('Sale price must be lower than regular price.');return}
+  if(!p.images.length){alert('Add at least one product image URL.');return}
+  if(a.some(x=>String(x.sku).toLowerCase()===p.sku.toLowerCase()&&x.id!==id)){alert('SKU already exists.');return}
+  const i=a.findIndex(x=>x.id===id);if(i>=0)a[i]=p;else a.unshift(p);write(KEYS.products,a);log((old?'Updated':'Created')+' product '+p.name);closeModal('productModal');refreshAll();
+}
+function toggleProduct(id){const a=read(KEYS.products),p=a.find(x=>x.id===id);if(!p)return;p.active=p.active===false;write(KEYS.products,a);log((p.active?'Activated ':'Deactivated ')+p.name);refreshAll()}
+function deleteProduct(id){const p=read(KEYS.products).find(x=>x.id===id);if(!p||!confirm('Delete '+p.name+'?'))return;write(KEYS.products,read(KEYS.products).filter(x=>x.id!==id));log('Deleted product '+p.name);refreshAll()}
+
+function renderOrders(){
+  const q=(document.getElementById('orderSearch')?.value||'').toLowerCase(),st=document.getElementById('orderStatus')?.value||'';
+  const a=read(KEYS.orders).filter(o=>(!st||o.status===st)&&(!q||((o.id||'')+' '+(o.customer?.name||'')+' '+(o.customer?.phone||'')).toLowerCase().includes(q)));
+  document.getElementById('orderRows').innerHTML=a.map(o=>`<tr><td><b>${esc(o.id)}</b></td><td>${esc(o.customer?.name||'')}<br><span class="muted">${esc(o.customer?.phone||'')}</span></td><td>${o.createdAt?new Date(o.createdAt).toLocaleDateString():''}</td><td>${money(o.total)}</td><td>${esc(o.payment||'')}</td><td><span class="status ${esc(o.status||'')}">${esc(o.status||'')}</span></td><td><div class="actions"><button class="mini" onclick="viewOrder('${esc(o.id)}')">Details</button><button class="mini" onclick="printInvoice('${esc(o.id)}')">Invoice</button></div></td></tr>`).join('')||'<tr><td colspan="7" class="empty">No orders found.</td></tr>';
+}
+function viewOrder(id){
+  const o=read(KEYS.orders).find(x=>x.id===id);if(!o)return;
+  document.getElementById('orderDetail').innerHTML=`<h2>Order ${esc(o.id)}</h2><p class="muted">${o.createdAt?new Date(o.createdAt).toLocaleString():''}</p><div class="panel"><b>${esc(o.customer?.name||'')}</b><p>${esc(o.customer?.phone||'')} · ${esc(o.customer?.email||'')}<br>${esc(o.customer?.address||'')}, ${esc(o.customer?.city||'')}</p></div><h3>Items</h3>${(o.items||[]).map(x=>`<div class="split" style="padding:9px 0;border-bottom:1px solid #eee;font-size:12px"><span>${esc(x.name)} · ${esc(x.size)} / ${esc(x.color)} × ${x.qty}</span><b>${money(Number(x.price)*Number(x.qty))}</b></div>`).join('')}<p>Subtotal: ${money(o.subtotal)}<br>Delivery: ${money(o.delivery)}<br>Discount: ${money(o.discount)}<br><b>Total: ${money(o.total)}</b></p><label>Update order status</label><select class="field" id="newStatus">${['Pending','Confirmed','Processing','Shipped','Delivered','Cancelled'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select><button class="btn" style="margin-top:12px" onclick="updateOrderStatus('${esc(o.id)}')">Save status</button>`;
+  document.getElementById('orderModal').classList.add('open');
+}
+function updateOrderStatus(id){const a=read(KEYS.orders),o=a.find(x=>x.id===id);if(!o)return;o.status=document.getElementById('newStatus').value;o.updatedAt=new Date().toISOString();write(KEYS.orders,a);log('Changed '+id+' status to '+o.status);closeModal('orderModal');refreshAll()}
+function printInvoice(id){
+  const o=read(KEYS.orders).find(x=>x.id===id);if(!o)return;const w=window.open('','_blank');if(!w){alert('Please allow pop-ups to print invoices.');return}
+  w.document.write(`<html><head><title>Invoice ${esc(o.id)}</title><style>body{font:14px Arial;padding:35px;color:#111}h1{letter-spacing:5px}table{width:100%;border-collapse:collapse;margin-top:25px}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left}</style></head><body><h1>LUXE</h1><h2>INVOICE</h2><p>Order: ${esc(o.id)}<br>Date: ${o.createdAt?new Date(o.createdAt).toLocaleString():''}<br>Status: ${esc(o.status)}</p><p><b>Bill to:</b> ${esc(o.customer?.name||'')}<br>${esc(o.customer?.phone||'')}<br>${esc(o.customer?.address||'')}, ${esc(o.customer?.city||'')}</p><table><tr><th>Item</th><th>Qty</th><th>Price</th></tr>${(o.items||[]).map(x=>`<tr><td>${esc(x.name)} (${esc(x.size)}, ${esc(x.color)})</td><td>${x.qty}</td><td>${money(Number(x.price)*Number(x.qty))}</td></tr>`).join('')}</table><p>Subtotal: ${money(o.subtotal)}<br>Delivery: ${money(o.delivery)}<br>Discount: ${money(o.discount)}<br><b>Total: ${money(o.total)}</b></p><script>window.print()<\/script></body></html>`);w.document.close();
+}
+
+function renderInventory(){
+  const p=read(KEYS.products);document.getElementById('inventoryRows').innerHTML=p.map(x=>`<tr><td>${esc(x.name)}</td><td>${esc(x.sku)}</td><td><b>${x.stock}</b></td><td><input class="field" style="max-width:110px" type="number" min="0" id="stock-${esc(x.id)}" value="${x.stock}"></td><td><button class="mini" onclick="saveStock('${esc(x.id)}')">Update</button></td></tr>`).join('')||'<tr><td colspan="5" class="empty">No products.</td></tr>';
+}
+function saveStock(id){const input=document.getElementById('stock-'+id),qty=Number(input?.value);if(!Number.isInteger(qty)||qty<0){alert('Enter a valid stock quantity.');return}const a=read(KEYS.products),p=a.find(x=>x.id===id);if(!p)return;p.stock=qty;write(KEYS.products,a);log('Updated stock for '+p.name+' to '+qty);refreshAll()}
+function renderCustomers(){const a=read(KEYS.customers);document.getElementById('customerRows').innerHTML=a.map(x=>`<tr><td>${esc(x.name)}</td><td>${esc(x.email)}</td><td>${esc(x.phone)}</td><td>${esc(x.city)}</td><td>${x.orders||0}</td></tr>`).join('')||'<tr><td colspan="5" class="empty">No customers yet.</td></tr>'}
+function renderCoupons(){document.getElementById('couponRows').innerHTML=read(KEYS.coupons).map(c=>`<tr><td><b>${esc(c.code)}</b></td><td>${c.type==='percent'?c.value+'%':money(c.value)}</td><td>${money(c.minOrder)}</td><td>${c.active===false?'Inactive':'Active'}</td><td><div class="actions"><button class="mini" onclick="toggleCoupon('${esc(c.code)}')">Toggle</button><button class="mini" onclick="deleteCoupon('${esc(c.code)}')">Delete</button></div></td></tr>`).join('')||'<tr><td colspan="5" class="empty">No coupons.</td></tr>'}
 function openCouponForm(){document.getElementById('couponForm').reset();document.getElementById('couponModal').classList.add('open')}
-function saveCoupon(e){e.preventDefault();let f=new FormData(e.target),c={code:f.get('code').trim().toUpperCase(),type:f.get('type'),value:Number(f.get('value')),minOrder:Number(f.get('minOrder'))||0,active:true},a=read(KEYS.coupons);if(a.some(x=>x.code===c.code)){alert('Coupon code already exists.');return}if(c.type==='percent'&&c.value>100){alert('Percentage cannot exceed 100.');return}a.push(c);write(KEYS.coupons,a);log('Created coupon '+c.code);closeModal('couponModal');renderCoupons()}
-function toggleCoupon(code){let a=read(KEYS.coupons),c=a.find(x=>x.code===code);c.active=c.active===false;write(KEYS.coupons,a);log('Toggled coupon '+code);renderCoupons()}
+function saveCoupon(e){
+  e.preventDefault();const f=new FormData(e.target),c={code:f.get('code').trim().toUpperCase(),type:f.get('type'),value:Number(f.get('value')),minOrder:Number(f.get('minOrder'))||0,active:true},a=read(KEYS.coupons);
+  if(a.some(x=>x.code===c.code)){alert('Coupon code already exists.');return}
+  if(c.type==='percent'&&c.value>100){alert('Percentage cannot exceed 100.');return}
+  a.push(c);write(KEYS.coupons,a);log('Created coupon '+c.code);closeModal('couponModal');renderCoupons();
+}
+function toggleCoupon(code){const a=read(KEYS.coupons),c=a.find(x=>x.code===code);if(!c)return;c.active=c.active===false;write(KEYS.coupons,a);log('Toggled coupon '+code);renderCoupons()}
 function deleteCoupon(code){if(!confirm('Delete coupon '+code+'?'))return;write(KEYS.coupons,read(KEYS.coupons).filter(x=>x.code!==code));log('Deleted coupon '+code);renderCoupons()}
-function loadSettings(){let s=read(KEYS.settings,{storeName:'LUXE',deliveryCharge:250,freeDeliveryThreshold:10000,whatsapp:'',announcement:'Welcome to LUXE'}),f=document.getElementById('settingsForm');for(let k of Object.keys(s))if(f.elements[k])f.elements[k].value=s[k]}
-function saveSettings(e){e.preventDefault();let f=new FormData(e.target),s={storeName:f.get('storeName').trim(),whatsapp:f.get('whatsapp').trim(),deliveryCharge:Number(f.get('deliveryCharge')),freeDeliveryThreshold:Number(f.get('freeDeliveryThreshold')),announcement:f.get('announcement')};write(KEYS.settings,s);log('Updated store settings');alert('Store settings saved. Refresh the storefront to see changes.')}
-function renderReports(){let o=read(KEYS.orders),p=read(KEYS.products),c=read(KEYS.customers);document.getElementById('reportRevenue').textContent=money(o.filter(x=>x.status!=='Cancelled').reduce((a,x)=>a+x.total,0));document.getElementById('reportOrders').textContent=o.length;document.getElementById('reportProducts').textContent=p.length;document.getElementById('reportCustomers').textContent=c.length}
-function renderActivity(){document.getElementById('activityRows').innerHTML=read(KEYS.activity).map(x=>`<tr><td>${new Date(x.at).toLocaleString()}</td><td>${esc(x.text)}</td></tr>`).join('')||'<tr><td colspan="2" class="empty">No activity recorded.</td></tr>'}
-function exportCSV(type){let data=read(KEYS[type]||KEYS.products),rows;if(type==='orders')rows=data.map(o=>({id:o.id,name:o.customer.name,phone:o.customer.phone,email:o.customer.email,status:o.status,total:o.total,date:o.createdAt,items:o.items.map(x=>x.name+' x'+x.qty).join('; ')}));else if(type==='customers')rows=data;else rows=data.map(p=>({id:p.id,name:p.name,sku:p.sku,category:p.category,price:p.price,salePrice:p.salePrice,stock:p.stock,active:p.active}));if(!rows.length){alert('No data to export.');return}let keys=[...new Set(rows.flatMap(x=>Object.keys(x)))],csv=[keys.join(','),...rows.map(r=>keys.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"').join(','))].join('\n'),blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='luxe-'+type+'.csv';a.click();URL.revokeObjectURL(url)}
-function downloadBackup(){let obj={};Object.values(KEYS).forEach(k=>obj[k]=read(k,null));let blob=new Blob([JSON.stringify({app:'LUXE',version:1,createdAt:new Date().toISOString(),data:obj},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='luxe-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}
-function restoreBackup(e){let file=e.target.files[0];if(!file)return;let r=new FileReader();r.onload=()=>{try{let obj=JSON.parse(r.result);if(obj.app!=='LUXE'||!obj.data)throw Error('Invalid backup');if(!confirm('Restore backup? Current store data will be replaced.'))return;Object.values(KEYS).forEach(k=>{if(Object.prototype.hasOwnProperty.call(obj.data,k))write(k,obj.data[k])});alert('Backup restored.');refreshAll()}catch(err){alert('Could not restore: '+err.message)}};r.readAsText(file)}
+function loadSettings(){
+  const s=read(KEYS.settings,{storeName:'LUXE',deliveryCharge:250,freeDeliveryThreshold:10000,whatsapp:'',announcement:'Welcome to LUXE'}),f=document.getElementById('settingsForm');
+  for(const k of Object.keys(s))if(f.elements[k])f.elements[k].value=s[k];
+}
+function saveSettings(e){e.preventDefault();const f=new FormData(e.target),s={storeName:f.get('storeName').trim(),whatsapp:f.get('whatsapp').trim(),deliveryCharge:Number(f.get('deliveryCharge')),freeDeliveryThreshold:Number(f.get('freeDeliveryThreshold')),announcement:f.get('announcement')};write(KEYS.settings,s);log('Updated store settings');alert('Store settings saved. Refresh the storefront to see changes.')}
+function renderReports(){
+  const o=read(KEYS.orders),p=read(KEYS.products),c=read(KEYS.customers);
+  document.getElementById('reportRevenue').textContent=money(o.filter(x=>x.status!=='Cancelled').reduce((a,x)=>a+Number(x.total||0),0));
+  document.getElementById('reportOrders').textContent=o.length;document.getElementById('reportProducts').textContent=p.length;document.getElementById('reportCustomers').textContent=c.length;
+}
+function renderActivity(){document.getElementById('activityRows').innerHTML=read(KEYS.activity).map(x=>`<tr><td>${x.at?new Date(x.at).toLocaleString():''}</td><td>${esc(x.text)}</td></tr>`).join('')||'<tr><td colspan="2" class="empty">No activity recorded.</td></tr>'}
+function exportCSV(type){
+  const data=read(KEYS[type]||KEYS.products);let rows;
+  if(type==='orders')rows=data.map(o=>({id:o.id,name:o.customer?.name,phone:o.customer?.phone,email:o.customer?.email,status:o.status,total:o.total,date:o.createdAt,items:(o.items||[]).map(x=>x.name+' x'+x.qty).join('; ')}));
+  else if(type==='customers')rows=data;else rows=data.map(p=>({id:p.id,name:p.name,sku:p.sku,category:p.category,price:p.price,salePrice:p.salePrice,stock:p.stock,active:p.active}));
+  if(!rows.length){alert('No data to export.');return}
+  const keys=[...new Set(rows.flatMap(x=>Object.keys(x)))],csv=[keys.join(','),...rows.map(r=>keys.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"').join(','))].join('\n');
+  const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='luxe-'+type+'.csv';a.click();URL.revokeObjectURL(url);
+}
+function downloadBackup(){
+  const obj={};Object.values(KEYS).forEach(k=>obj[k]=read(k,null));
+  const blob=new Blob([JSON.stringify({app:'LUXE',version:1,createdAt:new Date().toISOString(),data:obj},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='luxe-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);
+}
+function restoreBackup(e){
+  const file=e.target.files[0];if(!file)return;const r=new FileReader();
+  r.onload=()=>{try{const obj=JSON.parse(r.result);if(obj.app!=='LUXE'||!obj.data)throw Error('Invalid backup');if(!confirm('Restore backup? Current browser data will be replaced.'))return;Object.values(KEYS).forEach(k=>{if(Object.prototype.hasOwnProperty.call(obj.data,k))write(k,obj.data[k])});alert('Backup restored.');refreshAll()}catch(err){alert('Could not restore: '+err.message)}};
+  r.readAsText(file);e.target.value='';
+}
 function closeModal(id){document.getElementById(id).classList.remove('open')}
-window.addEventListener('storage',e=>{if(Object.values(KEYS).includes(e.key))refreshAll()});
-if(sessionStorage.getItem('luxe_admin_session')==='1')startApp();
+window.addEventListener('storage',e=>{if(Object.values(KEYS).includes(e.key)&&document.getElementById('app').style.display==='block')refreshAll()});
+
+(async function initializeAdmin(){
+  const loginScreen=document.getElementById('loginScreen');
+  try{
+    if(!window.LUXE_SUPABASE)throw new Error('Supabase client not found. Check that supabase-config.js loads correctly.');
+    const {data,error}=await window.LUXE_SUPABASE.auth.getSession();
+    if(error)throw error;
+    if(data.session)startApp();
+    else loginScreen.style.display='grid';
+  }catch(error){
+    console.error('LUXE authentication initialization error:',error);
+    loginScreen.style.display='grid';
+    document.getElementById('loginError').textContent='Authentication connection failed. Check your connection and refresh.';
+  }
+})();
 </script>
-
-  
-<!-- Supabase JavaScript Library -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<!-- LUXE Supabase Configuration -->
-<script src="./luxe-supabase-config.js"></script>
-
 </body>
 </html>
