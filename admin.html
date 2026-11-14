@@ -162,7 +162,28 @@ tr:last-child td{border-bottom:0}
 <div class="modalback" id="productModal"><div class="modal"><button class="close" onclick="closeModal('productModal')">×</button><h2 id="productFormTitle">Add product</h2>
 <form id="productForm" onsubmit="saveProduct(event)" class="form-grid"><input type="hidden" name="id">
 <div><label>Product name</label><input class="field" name="name" required></div><div><label>SKU</label><input class="field" name="sku" required></div>
-<div><label>Category</label><select class="field" name="category"><option>Men</option><option>Women</option><option>Accessories</option></select></div>
+
+<div>
+    <label>Category</label>
+
+    <select class="field" name="category_id" required>
+        <option value="">Select Category</option>
+
+        <option value="29b4ddd6-329b-42a4-9dec-86766f21fb33">
+            Men
+        </option>
+
+        <option value="1070bf9b-436f-491e-9771-7d5e32286aa7">
+            Women
+        </option>
+
+        <option value="eab6963d-3586-48b9-a15e-12b7cc08e17f">
+            Accessories
+        </option>
+    </select>
+</div>
+
+  
 <div><label>Regular price (Rs.)</label><input class="field" type="number" min="0" name="price" required></div>
 <div><label>Sale price (0 = none)</label><input class="field" type="number" min="0" name="salePrice"></div>
 <div><label>Stock quantity</label><input class="field" type="number" min="0" name="stock" required></div>
