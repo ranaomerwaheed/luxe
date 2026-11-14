@@ -73,4 +73,14 @@ function restoreBackup(e){let file=e.target.files[0];if(!file)return;let r=new F
 function closeModal(id){document.getElementById(id).classList.remove('open')}
 window.addEventListener('storage',e=>{if(Object.values(KEYS).includes(e.key))refreshAll()});
 if(sessionStorage.getItem('luxe_admin_session')==='1')startApp();
-</script></body></html>
+</script>
+
+  
+<!-- Supabase JavaScript Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- LUXE Supabase Configuration -->
+<script src="./luxe-supabase-config.js"></script>
+
+</body>
+</html>
