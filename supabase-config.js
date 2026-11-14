@@ -12,7 +12,7 @@
   // Paste your Supabase Publishable / anon key here.
   // Never use the service_role or secret key here.
   const SUPABASE_ANON_KEY =
-    "PASTE_YOUR_EXISTING_PUBLIC_ANON_KEY_HERE";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzYWJxd255bHhub3V2aXplbWZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ2Njg0MTEsImV4cCI6MjExMDI0NDQxMX0.AUA-NyF9jiMAg7McVl_xoboF2FOV_l1UTbbwySASwdU";
 
   if (!window.supabase) {
     console.error(
